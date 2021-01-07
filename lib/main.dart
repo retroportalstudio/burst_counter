@@ -78,9 +78,9 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
   frameBuilder(dynamic timestamp) {
     // Looping though particles to calculate their new position
     particles.forEach((pt) {
-      //Calculating Drag Force
-      double dragForceX = 0.5 * airDensity * pow(pt.velocity.x, 2) * dragCof * pt.area;
-      double dragForceY = 0.5 * airDensity * pow(pt.velocity.y, 2) * dragCof * pt.area;
+      //Calculating Drag Force (DRAG FORCE HAS TO BE NEGATIVE - MISSED THIS IN THE TUTORIAL)
+      double dragForceX = -0.5 * airDensity * pow(pt.velocity.x, 2) * dragCof * pt.area;
+      double dragForceY = -0.5 * airDensity * pow(pt.velocity.y, 2) * dragCof * pt.area;
 
       dragForceX = dragForceX.isInfinite ? 0.0 : dragForceX;
       dragForceY = dragForceY.isInfinite ? 0.0 : dragForceY;
